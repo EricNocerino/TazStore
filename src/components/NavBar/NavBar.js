@@ -1,0 +1,25 @@
+import React from 'react';
+import './NavBar.css';
+import { CardWidget } from '../Cartwidget/CartWidget';
+import logo from './TazLogo.png'
+
+
+
+export const NavBar = () => {
+    return (
+       <nav className='NavBar'>
+         <ul>
+            <li><img src={logo} alt='logo' width='60px' text-align='left'/> </li>
+            <li><a>Productos</a></li>
+            <li><a>Diseños</a></li>
+            <li><a>Contacto</a></li>           
+            <li><a>Quienes Somos</a></li>
+            <li><CardWidget cantidad={0}/></li>     
+            </ul>
+            
+        
+       </nav>
+    )
+}
+
+export default NavBar

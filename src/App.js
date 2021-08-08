@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import TazLogo from './components/assets/img/TazLogo.jpg';
+import TazLogo from './components/Imagenes/TazLogo.jpg';
 
-import "./components/NavBar";
-import NavBar from './components/NavBar'
+import "./components/NavBar/NavBar";
+import NavBar from './components/NavBar/NavBar'
+import ItemListConteiner from './components/ItemListConteiner/ItemListConteiner'
 
 
 class App extends Component {
@@ -11,13 +12,11 @@ class App extends Component {
         return(
             <div className="App">
                 <NavBar></NavBar>
-                <img src= { TazLogo} />
-                
-                <h1></h1>
-
+                <ItemListConteiner h1='Hola Usuario' h2='Bienvenido a Taz Tattoo Store'/>
             </div>
-
+            
         )
+
     }
 
 
