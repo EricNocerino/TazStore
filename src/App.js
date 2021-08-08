@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import TazLogo from './components/assets/img/TazLogo.jpg';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Bienvenidos a la tienda oficial de Taz Store
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Ingresar
-        </a>
-      </header>
-    </div>
-  );
+import "./components/NavBar";
+import NavBar from './components/NavBar'
+
+
+class App extends Component {
+    render () {
+        return(
+            <div className="App">
+                <NavBar></NavBar>
+                <img src= { TazLogo} />
+                
+                <h1></h1>
+
+            </div>
+
+        )
+    }
+
+
+
+
 }
 
 export default App;
+
