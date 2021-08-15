@@ -1,13 +1,21 @@
 import React from 'react';
-import './ItemListConteiner.css';
+import { Card, Image, Icon} from 'semantic-ui-react';
+import ItemCount from '../ItemCount/ItemCount';
 
-const ItemListConteiner = ({h1, h2}) =>{
-    return(
-        <div className='ItemListConteiner'>
-            <h1>{h1}</h1>
-            <h2>{h2}</h2>
+const ItemListConteiner = ({ name, img, date }) => (
+	<Card style={{ height: 420, margin: 20 }}>
+		<Image src={img} wrapped ui={false} />
+		<Card.Content>
+			<Card.Header>{name}</Card.Header>
+			<Card.Meta>
+				<span className='date'>{date}</span>
+			</Card.Meta>
+            <Card.Content extra>
+            </Card.Content>
+            <ItemCount />
+            
+		</Card.Content>
+	</Card>
+);
 
-        </div>
-    )
-}
 export default ItemListConteiner;

@@ -11,7 +11,8 @@ export const NavBar = () => {
          <ul>
             <li><img src={logo} alt='logo' width='60px' text-align='left'/> </li>
             <li><a>Productos</a></li>
-            <li><a>Diseños</a></li>
+            <li><a>Insumos</a></li>
+            <li><a>diseños</a></li>
             <li><a>Contacto</a></li>           
             <li><a>Quienes Somos</a></li>
             <li><CardWidget cantidad={0}/></li>     
