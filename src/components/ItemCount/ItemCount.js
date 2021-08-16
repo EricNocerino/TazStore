@@ -5,11 +5,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 	const [stockItems, setStockItems] = useState(initial);
 
 	const handleIncrement = () => {
-		if (stockItems < stock) {
-			setStockItems(stockItems + 1);
-		} else {
-			return false;
-		}
+		setStockItems(stockItems + 1);
 	};
 
 	const handleDecrement = () => {
