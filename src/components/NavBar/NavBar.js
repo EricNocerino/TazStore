@@ -1,14 +1,14 @@
 import React from "react";
 import "./NavBar.css";
 import { CardWidget } from "../Cartwidget/CartWidget";
-import logo from "./TazLogo.png";
+import logo from "./LogoTaz.png";
 
 export const NavBar = () => {
 	return (
 		<nav className="NavBar">
 			<ul>
 				<li>
-					<img src={logo} alt="logo" width="60px" text-align="left" />{" "}
+					<img src={logo} alt="logo" width="40px" text-align="left" />{" "}
 				</li>
 				<li>
 					<a>Productos</a>

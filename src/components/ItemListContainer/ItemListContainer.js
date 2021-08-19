@@ -1,17 +1,20 @@
-import React from "react";
-import { Card, Image } from "semantic-ui-react";
+import { React, useState, useEffect } from "react";
+import ItemList from "../Items/ItemList";
 
-const ItemListContainer = ({ array }) => (
-	<Card style={{ height: 420, margin: 20 }}>
-		<Image src={array.pictureURL} wrapped ui={false} />
-		<Card.Content>
-			<Card.Header>{array.title}</Card.Header>
-			<Card.Meta>
-				<span className="description">{array.description}</span>
-			</Card.Meta>
-			<Card.Content extra>Precio: ${array.price}</Card.Content>
-		</Card.Content>
-	</Card>
-);
+const ItemListContainer = () => {
+	const [products, setProducts] = useState([]);
+	useEffect(() => {
+		fetch("https://fakestoreapi.com//products?limit=5")
+			.then((response) => {
+				console.log(response);
+				return response.json();
+			})
+			.then((data) => {
+				console.log(data);
+				setProducts(data);
+			});
+	}, []);
+	return <ItemList products={products} />;
+};
 
 export default ItemListContainer;

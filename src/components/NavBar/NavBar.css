@@ -4,10 +4,12 @@ ul {
 	padding: 0;
 	overflow: hidden;
 	background-color: #333;
+	display: flex;
 }
 
 li {
-	float: left;
+	float: right;
+	display: center;
 }
 
 li a {
@@ -23,7 +25,7 @@ li a:hover {
 }
 
 ul a {
-	display: block;
+	display: flex;
 	color: #fff;
 	text-decoration: none;
 	font-weight: 400;
@@ -33,14 +35,14 @@ ul a {
 }
 
 ul li {
-	position: relative;
 	float: left;
 	margin: 0;
 	padding: 0;
+	display: table-row;
 }
 
 ul ul {
-	display: none;
+	display: center;
 	position: absolute;
 	top: 100%;
 	left: 0;
@@ -51,6 +53,7 @@ ul ul {
 ul ul li {
 	float: none;
 	width: 150px;
+	display: center;
 }
 
 ul ul a {

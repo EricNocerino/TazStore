@@ -18,10 +18,10 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 
 	return (
 		<div className="ItemCount">
-			<a>
+			<p>
 				<Icon name="slack" />
 				En stock: {stock}
-			</a>
+			</p>
 			<p>Cantidad: {stockItems}</p>
 			<Button secondary onClick={handleDecrement}>
 				-
