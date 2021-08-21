@@ -1,18 +1,10 @@
 import React from "react";
 import { Card, Image } from "semantic-ui-react";
-import ItemCount from "../ItemCount/ItemCount";
-
-let stock = 15;
-
-function Añadir(stockItems) {
-	stockItems > stock
-		? alert("no tenemos stock suficiente")
-		: alert("Añadido al carrito");
-}
+import "./Item.css";
 
 const Item = ({ product }) => (
-	<Card style={{ height: 540, margin: 20 }}>
-		<Image src={product.image} style={{ height: 250, margin: 20 }} />
+	<Card className="card">
+		<Image src={product.image} className="image" />
 		<Card.Content>
 			<Card.Header>{product.title}</Card.Header>
 			<Card.Meta>
@@ -20,7 +12,7 @@ const Item = ({ product }) => (
 			</Card.Meta>
 			<Card.Description>${product.price}</Card.Description>
 			<Card.Content extra>
-				<ItemCount stock={stock} initial={1} onAdd={Añadir} />
+				<a>Mas Detalles >>></a>
 			</Card.Content>
 		</Card.Content>
 	</Card>

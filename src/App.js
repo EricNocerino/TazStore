@@ -1,9 +1,12 @@
 import React from "react";
-import NavBar from "./components/NavBar/NavBar";
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import "./App.css";
 
-function App() {
+//Components
+import NavBar from "./components/NavBar/NavBar";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
+
+const App = () => {
 	return (
 		<div className="App">
 			<div>
@@ -12,8 +15,11 @@ function App() {
 			<div>
 				<ItemListContainer />
 			</div>
+			<div>
+				<ItemDetailContainer />
+			</div>
 		</div>
 	);
-}
+};
 
 export default App;
