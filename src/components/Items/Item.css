@@ -1,9 +1,16 @@
+.content {
+	max-width: 220px;
+}
+
 .card {
-	height: 540px;
+	height: 520px;
 	margin: 20px;
+	width: 200px;
 }
 
 .image {
 	height: 250px;
-	margin: 20px;
+	width: 200px;
+
+	margin: 10px;
 }

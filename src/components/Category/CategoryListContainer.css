@@ -1,15 +1,10 @@
-.Item {
-	display: grid;
+.items {
+	display: flex;
+	flex-direction: row;
 	align-items: center;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	width: max-content;
 	min-height: 700px;
 	padding: 10px;
 	margin: 10px;
-	flex-direction: row;
-}
-
-.items {
-	padding: 10px;
-	flex-direction: row;
 }

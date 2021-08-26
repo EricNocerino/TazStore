@@ -1,27 +1,30 @@
 import { React, useEffect, useState } from "react";
-import axios from "axios";
 
 //compoenentes
 import ItemDetail from "./ItemDetail";
-import Spinner from "../Spinner/Spinner";
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({ match }) => {
+	let productId = match.params.id;
+
 	const [data, setData] = useState({});
-	const [isLoading, setIsLoading] = useState(true);
-	console.log("que hay aca", data);
 
 	useEffect(() => {
-		axios("https://fakestoreapi.com/products/1").then((res) =>
-			setData(res.data)
-		);
 		setTimeout(() => {
-			setIsLoading(false);
+			fetch(`https://fakestoreapi.com/products/${productId}`)
+				.then((response) => {
+					console.log(response);
+					return response.json();
+				})
+				.then((data) => {
+					console.log(data);
+					setData(data);
+				});
 		}, 2000);
-	}, []);
+	}, [productId]);
 
 	return (
 		<div className="ItemDetail">
-			{isLoading ? <Spinner /> : <ItemDetail dataProduct={data} />}
+			<ItemDetail dataProduct={data} />
 		</div>
 	);
 };

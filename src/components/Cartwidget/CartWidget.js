@@ -2,15 +2,13 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
-export const CardWidget = (props) => {
+export const CartWidget = (props) => {
 	return (
-		<>
-			<a>
-				<FontAwesomeIcon icon={faShoppingCart} />
-				{props.cantidad}
-			</a>
-		</>
+		<p>
+			<FontAwesomeIcon icon={faShoppingCart} />
+			{props.cantidad}
+		</p>
 	);
 };
 
-export default CardWidget;
+export default CartWidget;
