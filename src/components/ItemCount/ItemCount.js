@@ -9,7 +9,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 	};
 
 	const handleDecrement = () => {
-		if (stockItems > 1) {
+		if (stockItems > 0) {
 			setStockItems(stockItems - 1);
 		} else {
 			return false;
@@ -31,7 +31,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 			</Button>
 			<Button animated="vertical">
 				<Button.Content hidden onClick={() => onAdd(stockItems)}>
-					Añadir
+					Añadir {stockItems}
 				</Button.Content>
 				<Button.Content visible>
 					<Icon name="shop" />

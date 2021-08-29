@@ -1,16 +1,22 @@
-import React from "react";
-import { Item, Card } from "semantic-ui-react";
+import React, { useState } from "react";
+import { Item, Card, Button } from "semantic-ui-react";
 import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 
 let stock = 15;
 
-function Añadir(stockItems) {
-	stockItems > stock
-		? alert("no tenemos stock suficiente")
-		: alert("Añadido al carrito");
-}
-
 const ItemDetail = ({ dataProduct }) => {
+	const [cart, setCart] = useState(null);
+
+	const Añadir = ({ stockItems }) => {
+		if (stockItems > stock) {
+			alert("No hay suficiente Stock");
+		} else {
+			setCart(cart + Añadir);
+			Añadir == 0 ? setCart(cart) : setCart(cart + Añadir);
+		}
+	};
+
 	return (
 		<Card style={{ height: 730, width: 400, margin: 20 }}>
 			<Item.Group style={{ margin: 20 }}>
@@ -24,8 +30,11 @@ const ItemDetail = ({ dataProduct }) => {
 							<p className="price">${dataProduct.price}</p>
 						</Item.Meta>
 						<Item.Description>{dataProduct.description}</Item.Description>
-						<Item.Image size="medium" src={dataProduct.image} />
-						<ItemCount stock={stock} initial={1} onAdd={Añadir} />
+						<Item.Image size="medium" src={dataProduct.image} />{" "}
+						{!cart && <ItemCount stock={stock} initial={0} onAdd={Añadir} />}
+						<Link to="/CartWidget">
+							<Button>Comprar</Button>
+						</Link>
 					</Item.Content>
 				</Item>
 			</Item.Group>
