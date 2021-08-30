@@ -13,7 +13,7 @@ const ItemDetail = ({ dataProduct }) => {
 			alert("No hay suficiente Stock");
 		} else {
 			setCart(cart + Añadir);
-			Añadir == 0 ? setCart(cart) : setCart(cart + Añadir);
+			Añadir === 0 ? setCart(cart) : setCart(cart + Añadir);
 		}
 	};
 
@@ -33,7 +33,7 @@ const ItemDetail = ({ dataProduct }) => {
 						<Item.Image size="medium" src={dataProduct.image} />{" "}
 						{!cart && <ItemCount stock={stock} initial={0} onAdd={Añadir} />}
 						<Link to="/CartWidget">
-							<Button>Comprar</Button>
+							<Button>Comprar{setCart}</Button>
 						</Link>
 					</Item.Content>
 				</Item>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Item from "../Items/Item";
+import { Link } from "react-router-dom";
 
 const CategoryListContainer = ({ match }) => {
 	const categoryId = match.params.id;
@@ -25,9 +26,9 @@ const CategoryListContainer = ({ match }) => {
 			<h1>{categoryId}</h1>
 			{category.map((e) => {
 				return (
-					<div className="items">
+					<Link className="items" to={`/detail/${e.id}`}>
 						<Item key={e.id} product={e} />
-					</div>
+					</Link>
 				);
 			})}
 		</div>
