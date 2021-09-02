@@ -14,7 +14,7 @@ const Navigation = () => {
 				<Link to="/category/women's%20clothing">Mujer</Link>
 				<Link to="/category/jewelery">Joyería</Link>
 				<Link to="/category/electronics">Electronica</Link>
-				<Link to="/CartWidget">
+				<Link to="/cart">
 					<CartWidget />
 				</Link>
 			</ul>

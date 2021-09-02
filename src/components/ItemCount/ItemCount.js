@@ -30,7 +30,13 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 				+
 			</Button>
 			<Button animated="vertical">
-				<Button.Content hidden onClick={() => onAdd(stockItems)}>
+				<Button.Content
+					hidden
+					onClick={() => {
+						onAdd(stockItems);
+						setStockItems(1);
+					}}
+				>
 					Añadir {stockItems}
 				</Button.Content>
 				<Button.Content visible>
