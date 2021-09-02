@@ -6,16 +6,12 @@ import { Link } from "react-router-dom";
 let stock = 15;
 
 const ItemDetail = ({ dataProduct }) => {
-	const [cart, setCart] = useState(null);
 
-	const Añadir = ({ stockItems }) => {
-		if (stockItems > stock) {
-			alert("No hay suficiente Stock");
-		} else {
-			setCart(cart + Añadir);
-			Añadir === 0 ? setCart(cart) : setCart(cart + Añadir);
-		}
-	};
+	const [stockItems, setStockItems] = useState(null)
+
+	const onAdd = (valor) => {
+		valor > 0 ? setStockItems(valor) : alert ("Agregar un item por favor.")
+	}
 
 	return (
 		<Card style={{ height: 730, width: 400, margin: 20 }}>
@@ -31,10 +27,11 @@ const ItemDetail = ({ dataProduct }) => {
 						</Item.Meta>
 						<Item.Description>{dataProduct.description}</Item.Description>
 						<Item.Image size="medium" src={dataProduct.image} />{" "}
-						{!cart && <ItemCount stock={stock} initial={0} onAdd={Añadir} />}
+						{stockItems === null ? <ItemCount stock={stock} initial={0} onAdd={onAdd} /> :
 						<Link to="/CartWidget">
-							<Button>Comprar{setCart}</Button>
-						</Link>
+							<Button>Comprar</Button>
+						</Link> 
+						}
 					</Item.Content>
 				</Item>
 			</Item.Group>
