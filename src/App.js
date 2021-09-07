@@ -9,6 +9,7 @@ import Header from "./components/Header/Header";
 import Navigation from "./components/Navigation/Navigation";
 import CategoryListContainer from "./components/Category/CategoryListContainer";
 import { CartProvider } from "./components/CartContext/CartContext";
+import Cart from "./components/Cart/Cart";
 
 const App = () => {
 	return (
@@ -21,6 +22,7 @@ const App = () => {
 						<Route exact path="/" component={ItemListContainer} />
 						<Route path="/category/:id" component={CategoryListContainer} />
 						<Route path="/detail/:id" component={ItemDetailContainer} />
+						<Route path="/cart" component={Cart} />
 					</Switch>
 				</div>
 			</Router>
