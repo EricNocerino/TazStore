@@ -12,7 +12,7 @@ const CartItem = ({ dataItem }) => {
 				<td>
 					<img
 						className="img-fluid w-100 text-center img-cart-item"
-						src={dataItem.image}
+						src={dataItem.img}
 						alt={dataItem.title}
 					></img>
 				</td>

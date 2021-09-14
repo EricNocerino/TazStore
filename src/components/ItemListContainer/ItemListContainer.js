@@ -9,6 +9,7 @@ import { db } from "../../firebase";
 const ItemListContainer = () => {
 	const [products, setProducts] = useState([]);
 	console.log(products);
+
 	const getProducts = async () => {
 		const docs = [];
 		const q = query(collection(db, "products"));

@@ -1,30 +1,39 @@
 import { React, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 //compoenentes
 import ItemDetail from "./ItemDetail";
+import { db } from "../../firebase";
+import { doc, getDoc } from "firebase/firestore";
+import Spinner from "../Spinner/Spinner";
 
-const ItemDetailContainer = ({ match }) => {
-	let productId = match.params.id;
-
+const ItemDetailContainer = () => {
 	const [data, setData] = useState({});
+	const [isLoading, setIsLoading] = useState(false);
+
+	const { id } = useParams();
+
+	const getProduct = async (id) => {
+		const docRef = doc(db, "products", id);
+		const docSnap = await getDoc(docRef);
+		let prdId = {};
+
+		if (docSnap.exists()) {
+			setIsLoading(true);
+			prdId = docSnap.id;
+			setData({ ...docSnap.data(), id: prdId });
+		} else {
+			alert("ocurrió un error");
+		}
+	};
 
 	useEffect(() => {
-		setTimeout(() => {
-			fetch(`https://fakestoreapi.com/products/${productId}`)
-				.then((response) => {
-					console.log(response);
-					return response.json();
-				})
-				.then((data) => {
-					console.log(data);
-					setData(data);
-				});
-		}, 2000);
-	}, [productId]);
+		getProduct(id);
+	}, [id]);
 
 	return (
 		<div className="ItemDetail">
-			<ItemDetail dataProduct={data} />
+			{isLoading === false ? <Spinner /> : <ItemDetail dataProduct={data} />}
 		</div>
 	);
 };

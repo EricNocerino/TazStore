@@ -6,11 +6,11 @@ const Item = ({ product }) => {
 	return (
 		<div className="content">
 			<Card>
-				<Image src={product.image} className="image" />
+				<Image src={product.img} className="image" />
 				<Card.Content className="card">
 					<Card.Header className="header">{product.title}</Card.Header>
 					<Card.Meta>
-						<span className="category">{product.category}</span>
+						<span className="category">Stock:{product.stock}</span>
 					</Card.Meta>
 					<Card.Description>${product.price}</Card.Description>
 					<Card.Content extra>
