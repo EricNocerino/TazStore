@@ -7,7 +7,7 @@ import { useCartContext } from "../CartContext/CartContext";
 const ItemDetail = ({ dataProduct }) => {
 	const [stockItems, setStockItems] = useState(null);
 
-	let stock = 15;
+	let stock = dataProduct.stock;
 	if (stockItems > stock) {
 		alert("No hay suficiente Stock");
 	}
@@ -32,7 +32,7 @@ const ItemDetail = ({ dataProduct }) => {
 							<p className="price">${dataProduct.price}</p>
 						</Item.Meta>
 						<Item.Description>{dataProduct.description}</Item.Description>
-						<Item.Image size="medium" src={dataProduct.image} />
+						<Item.Image size="medium" src={dataProduct.img} />
 						<ItemCount stock={stock} initial={1} onAdd={onAdd} />
 						<>
 							<Link to="/cart">
