@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 import CartItem from "./CartItem";
 import { CartContext } from "../../components/CartContext/CartContext";
 import { Button } from "semantic-ui-react";
+import FormUser from "./FormUser";
 
 const Cart = () => {
 	const { cart, clear, totalItemsCart, totalPrice } = useContext(CartContext);
@@ -45,6 +46,7 @@ const Cart = () => {
 				</div>
 			</div>
 			<h1>Total : ${totalPrice} </h1>
+			<FormUser />
 		</div>
 	);
 };
